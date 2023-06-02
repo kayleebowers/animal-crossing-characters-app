@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.all-characters {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.character-box {
+    width: 20%;
+    border: 1px solid black;
+}

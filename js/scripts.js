@@ -23,7 +23,8 @@ let characterRepository = (function () {
     let itemSpecies = document.createElement('p');
     let itemPersonality = document.createElement('p');
 
-    //define p tag info
+    //define element info
+    pageListItem.classList.add('character-box');
     itemName.innerText = character.name;
     itemName.classList.add('character-name');
     itemSpecies.innerText = character.species;
