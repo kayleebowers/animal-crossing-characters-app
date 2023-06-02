@@ -25,6 +25,21 @@ let characterRepository = (function () {
   //   characters.appendChild('div');
   //   characters.appendChild('button');
   // }
+
+  //function to get information from chained objects in API
+function getKeys(object) {
+  let keysArray = Object.keys(object)
+  console.log(keysArray.length);
+
+  for(let i = 0; i < keysArray.length; i++) {
+    let character = {
+      id: object[keysArray[i]].id,
+      fileName: object[keysArray[i]].fileName,
+      name: object[keysArray[i]].name.nameUsen
+    }
+    add(character);
+    };
+}
   
   //get api info
   function getApiInfo() {
