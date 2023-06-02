@@ -61,5 +61,10 @@ let characterRepository = (function () {
   };
 })();
 
-console.log(characterRepository.getAll());
+characterRepository.getApiInfo().then(function() {
+  //data is loaded
+  characterRepository.getAll().forEach(function(character) {
+    console.log(character);
+  });
+})
 
