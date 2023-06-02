@@ -31,17 +31,19 @@ let characterRepository = (function () {
     return fetch(api).then(function(response) {
       return (response.json());
     }).then(function(object) {
-      Object.keys(object).forEach(function(char) {
-        let character = {
-          name: character.name, //need to go one level deeper
-          personality: character.personality,
-          species: character.species,
-          catchPhrase: character.catch-phrase,
-          image: character.image_uri,
-          saying: character.saying
+      for (key in object) {
+        for (innerKey in key) {
+          let foundCharacter = {
+            name: foundCharacter.name, //need to go one level deeper
+            personality: foundCharacter.personality,
+            species: foundCharacter.species,
+            catchPhrase: foundCharacter.catch-phrase,
+            image: foundCharacter.image_uri,
+            saying: foundCharacter.saying
+        }
+        addCharacter(foundCharacter);
         };
-        addCharacter(character);
-      });
+      }
     }).catch(function(e) {
       console.error(e);
     })
