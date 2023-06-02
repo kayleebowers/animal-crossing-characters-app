@@ -27,9 +27,9 @@ let characterRepository = (function () {
     pageListItem.classList.add('character-box');
     itemName.innerText = character.name;
     itemName.classList.add('character-name');
-    itemSpecies.innerText = character.species;
+    itemSpecies.innerText = `Species: ${character.species}`;
     itemSpecies.classList.add('character-species');
-    itemPersonality.innerText = character.personality;
+    itemPersonality.innerText = `Personality: ${character.personality}`;
     itemPersonality.classList.add('character-personality');
 
     pageList.appendChild(pageListItem);
