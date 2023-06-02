@@ -13,18 +13,19 @@ let characterRepository = (function () {
       characterList.push(character);
     }
   }
-  // //add characters to webpage
-  // function addCharacterOnPage (character) {
-  //   let characters = document.querySelector('all-characters');
+  //add characters to webpage
+  function addCharacterOnPage (character) {
+    let pageList = document.querySelector('.all-characters');
 
-  //   document.createElement('div');
-  //   document.createElement('button');
+    let div = document.createElement('div');
+    let button = document.createElement('button');
 
-  //   button.innerText = character.name;
+    button.innerText = character.name;
+    button.classList.add('character-name--button');
 
-  //   characters.appendChild('div');
-  //   characters.appendChild('button');
-  // }
+    pageList.appendChild('div');
+    div.appendChild('button');
+  }
   
   //get api info
   function getApiInfo() {
@@ -56,7 +57,7 @@ let characterRepository = (function () {
   return {
     getAll,
     addCharacter,
-   // addCharacterOnPage,
+    addCharacterOnPage,
     getApiInfo
   };
 })();
@@ -64,7 +65,7 @@ let characterRepository = (function () {
 characterRepository.getApiInfo().then(function() {
   //data is loaded
   characterRepository.getAll().forEach(function(character) {
-    console.log(character);
+    characterRepository.addCharacterOnPage(character);
   });
 })
 
