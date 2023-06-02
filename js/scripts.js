@@ -1,6 +1,6 @@
 let characterRepository = (function () {
   let characterList = [];
-  let api = "https://studio-ghibli-films-api.herokuapp.com/";
+  let api = "https://raw.githubusercontent.com/alexislours/ACNHAPI/master/villagers.json";
 
   //get all characters function
 
