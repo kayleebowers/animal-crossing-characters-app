@@ -33,11 +33,14 @@ function getKeys(object) {
 
   for(let i = 0; i < keysArray.length; i++) {
     let character = {
-      id: object[keysArray[i]].id,
-      fileName: object[keysArray[i]].fileName,
-      name: object[keysArray[i]].name.nameUsen
+      name: object[keysArray[i]].name.nameUsen,
+      personality: object[keysArray[i]].personality,
+      species: object[keysArray[i]].species,
+      catchPhrase: object[keysArray[i]].catchPhrase,
+      image: object[keysArray[i]].image,
+      saying: object[keysArray[i]].saying
     }
-    add(character);
+    addCharacter(character);
     };
 }
   
@@ -45,21 +48,8 @@ function getKeys(object) {
   function getApiInfo() {
     return fetch(api).then(function(response) {
       return (response.json());
-    }).then(function(object) {
-      for (key in object) {
-        for (innerKey in key) {
-          let foundCharacter = {
-            name: foundCharacter.name, //need to go one level deeper
-            personality: foundCharacter.personality,
-            species: foundCharacter.species,
-            catchPhrase: foundCharacter.catch-phrase,
-            image: foundCharacter.image_uri,
-            saying: foundCharacter.saying
-        }
-        addCharacter(foundCharacter);
-        };
-      }
-    }).catch(function(e) {
+    }).then(getKeys(object))
+    .catch(function(e) {
       console.error(e);
     })
   }
