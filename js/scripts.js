@@ -25,31 +25,28 @@ let characterRepository = (function () {
   //   characters.appendChild('div');
   //   characters.appendChild('button');
   // }
-
-  //function to get information from chained objects in API
-function getKeys(object) {
-  let keysArray = Object.keys(object)
-  console.log(keysArray.length);
-
-  for(let i = 0; i < keysArray.length; i++) {
-    let character = {
-      name: object[keysArray[i]].name.nameUsen,
-      personality: object[keysArray[i]].personality,
-      species: object[keysArray[i]].species,
-      catchPhrase: object[keysArray[i]].catchPhrase,
-      image: object[keysArray[i]].image,
-      saying: object[keysArray[i]].saying
-    }
-    addCharacter(character);
-    };
-}
   
   //get api info
   function getApiInfo() {
     return fetch(api).then(function(response) {
       return (response.json());
-    }).then(getKeys(object))
-    .catch(function(e) {
+    }).then(function(object){
+      //loops through nested objects
+      let keysArray = Object.keys(object)
+      console.log(keysArray.length);
+    
+      for(let i = 0; i < keysArray.length; i++) {
+        let character = {
+          name: object[keysArray[i]].name.nameUsen,
+          personality: object[keysArray[i]].personality,
+          species: object[keysArray[i]].species,
+          catchPhrase: object[keysArray[i]].catchPhrase,
+          image: object[keysArray[i]].image,
+          saying: object[keysArray[i]].saying
+        }
+        addCharacter(character);
+        };
+    }).catch(function(e) {
       console.error(e);
     })
   }
@@ -64,4 +61,5 @@ function getKeys(object) {
   };
 })();
 
-characterRepository.getApiInfo();
+console.log(characterRepository.getAll());
+
