@@ -17,14 +17,14 @@ let characterRepository = (function () {
   function addCharacterOnPage (character) {
     let pageList = document.querySelector('.all-characters');
 
-    let div = document.createElement('div');
-    let button = document.createElement('button');
+    let pageListItem = document.createElement('div');
+    let itemName = document.createElement('p');
 
-    button.innerText = character.name;
-    button.classList.add('character-name--button');
+    itemName.innerText = character.name;
+    itemName.classList.add('character-name');
 
-    pageList.appendChild('div');
-    div.appendChild('button');
+    pageList.appendChild(pageListItem);
+    pageListItem.appendChild(itemName);
   }
   
   //get api info
