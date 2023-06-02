@@ -37,11 +37,11 @@ let characterRepository = (function () {
     
       for(let i = 0; i < keysArray.length; i++) {
         let character = {
-          name: object[keysArray[i]].name.nameUsen,
+          name: object[keysArray[i]].name['name-USen'],
           personality: object[keysArray[i]].personality,
           species: object[keysArray[i]].species,
-          catchPhrase: object[keysArray[i]].catchPhrase,
-          image: object[keysArray[i]].image,
+          catchPhrase: object[keysArray[i]]['catch-phrase'],
+          image: object[keysArray[i]].image_uri,
           saying: object[keysArray[i]].saying
         }
         addCharacter(character);
