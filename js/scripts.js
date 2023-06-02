@@ -9,29 +9,29 @@ let characterRepository = (function () {
 
   //add new character function
   function addCharacter(character) {
-    if (typeof character === 'object' && 'name' in character) {
+    if (typeof character === 'object') {
       characterList.push(character);
     }
   }
-  //add characters to webpage
-  function addCharacterOnPage (character) {
-    let characters = document.querySelector('all-characters');
+  // //add characters to webpage
+  // function addCharacterOnPage (character) {
+  //   let characters = document.querySelector('all-characters');
 
-    document.createElement('div');
-    document.createElement('button');
+  //   document.createElement('div');
+  //   document.createElement('button');
 
-    button.innerText = character.name;
+  //   button.innerText = character.name;
 
-    characters.appendChild('div');
-    characters.appendChild('button');
-  }
+  //   characters.appendChild('div');
+  //   characters.appendChild('button');
+  // }
   
   //get api info
   function getApiInfo() {
     return fetch(api).then(function(response) {
-      return response.json();
-    }).then(function(characters) {
-      json.results.array.forEach(character => { //need to go one level deeper
+      return (response.json());
+    }).then(function(object) {
+      Object.keys(object).forEach(function(char) {
         let character = {
           name: character.name, //need to go one level deeper
           personality: character.personality,
@@ -52,7 +52,7 @@ let characterRepository = (function () {
   return {
     getAll,
     addCharacter,
-    addCharacterOnPage,
+   // addCharacterOnPage,
     getApiInfo
   };
 })();
