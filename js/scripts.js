@@ -21,8 +21,6 @@ let characterRepository = (function () {
     //create HTML elements
     let pageListItem = document.createElement('div');
     let itemName = document.createElement('button');
-    // let itemSpecies = document.createElement('p');
-    // let itemPersonality = document.createElement('p');
 
     //define element info
     pageListItem.classList.add('character-box');
@@ -32,16 +30,22 @@ let characterRepository = (function () {
     itemName.setAttribute("type", "button");
     itemName.setAttribute("data-toggle", "modal");
     itemName.setAttribute("data-target", "#characterModal");
+
+    //append elements
+    pageList.appendChild(pageListItem);
+    pageListItem.appendChild(itemName);
+  }
+
+  //add character info to modal
+    
+    // let itemSpecies = document.createElement('p');
+    // let itemPersonality = document.createElement('p');
     // itemSpecies.innerText = `Species: ${character.species}`;
     // itemSpecies.classList.add('character-species');
     // itemPersonality.innerText = `Personality: ${character.personality}`;
     // itemPersonality.classList.add('character-personality');
-
-    pageList.appendChild(pageListItem);
-    pageListItem.appendChild(itemName);
     // pageListItem.appendChild(itemSpecies);
     // pageListItem.appendChild(itemPersonality);
-  }
   
   //get api info
   function getApiInfo() {
