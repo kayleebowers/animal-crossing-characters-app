@@ -35,7 +35,6 @@ let characterRepository = (function () {
     pageList.appendChild(pageListItem);
     pageListItem.appendChild(itemName);
 
-    showModal(character);
   }
   
   // add showModal function
@@ -64,6 +63,7 @@ let characterRepository = (function () {
     modalBody.append(characterImage);
     modalBody.append(characterSpecies);
     modalBody.append(characterPersonality);
+    modalHeader.append(modalTitle);
   }
 
   //get api info
