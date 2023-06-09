@@ -7,7 +7,7 @@ A small web application with HTML, CSS, and JavaScript that loads data from an e
 * Load data from an external source (API)
 * View a list of items
 * On user click, view details for that item
-* On user search, displays Pokemon details by filtering Pokemon name. 
+* On user search, displays Animal Crossing characters details by filtering character's name. 
 
 ## How to get the project running
 The web application was built using [GitHub Pages](https://kayleebowers.github.io/animal-crossing-characters-app/) and can be viewed there.  
