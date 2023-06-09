@@ -1,7 +1,13 @@
 # Animal Crossing Characters App
 
 ## Project description
-A small web application with HTML, CSS, and JavaScript that loads data from an external Animal Crossing API and enables the viewing of data points in modals. There is also a search bar, which allows users to search by character name. 
+A small web application with HTML, CSS, and JavaScript that loads data from an external Animal Crossing API and enables the viewing of data points in modals. 
+
+### Key Features
+* Load data from an external source (API)
+* View a list of items
+* On user click, view details for that item
+* On user search, displays Pokemon details by filtering Pokemon name. 
 
 ## How to get the project running
 The web application was built using [GitHub Pages](https://kayleebowers.github.io/animal-crossing-characters-app/) and can be viewed there.  
