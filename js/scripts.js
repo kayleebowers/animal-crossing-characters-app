@@ -27,7 +27,11 @@ let characterRepository = (function () {
     //define element info
     pageListItem.classList.add('character-box');
     itemName.innerText = character.name;
-    itemName.classList.add('character-name');
+    itemName.classList.add('btn');
+    itemName.classList.add('btn-primary');
+    itemName.setAttribute("type", "button");
+    itemName.setAttribute("data-toggle", "modal");
+    itemName.setAttribute("data-target", "#characterModal");
     // itemSpecies.innerText = `Species: ${character.species}`;
     // itemSpecies.classList.add('character-species');
     // itemPersonality.innerText = `Personality: ${character.personality}`;
@@ -68,7 +72,7 @@ let characterRepository = (function () {
   $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
-  
+
   //get character info
 
   return {
