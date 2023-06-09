@@ -13,29 +13,30 @@ let characterRepository = (function () {
       characterList.push(character);
     }
   }
+
   //add characters to webpage
   function addCharacterOnPage (character) {
     let pageList = document.querySelector('.all-characters');
 
     //create HTML elements
     let pageListItem = document.createElement('div');
-    let itemName = document.createElement('p');
-    let itemSpecies = document.createElement('p');
-    let itemPersonality = document.createElement('p');
+    let itemName = document.createElement('button');
+    // let itemSpecies = document.createElement('p');
+    // let itemPersonality = document.createElement('p');
 
     //define element info
     pageListItem.classList.add('character-box');
     itemName.innerText = character.name;
     itemName.classList.add('character-name');
-    itemSpecies.innerText = `Species: ${character.species}`;
-    itemSpecies.classList.add('character-species');
-    itemPersonality.innerText = `Personality: ${character.personality}`;
-    itemPersonality.classList.add('character-personality');
+    // itemSpecies.innerText = `Species: ${character.species}`;
+    // itemSpecies.classList.add('character-species');
+    // itemPersonality.innerText = `Personality: ${character.personality}`;
+    // itemPersonality.classList.add('character-personality');
 
     pageList.appendChild(pageListItem);
     pageListItem.appendChild(itemName);
-    pageListItem.appendChild(itemSpecies);
-    pageListItem.appendChild(itemPersonality);
+    // pageListItem.appendChild(itemSpecies);
+    // pageListItem.appendChild(itemPersonality);
   }
   
   //get api info
