@@ -1,0 +1,12 @@
+.all-characters, h1 {
+    margin: 30px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    max-height: 256px;
+}
+
+button {
+    margin-bottom: 30px;
+}

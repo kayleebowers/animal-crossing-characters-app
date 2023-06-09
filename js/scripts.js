@@ -26,9 +26,9 @@ let characterRepository = (function () {
     let itemImage = document.createElement('img');
 
     //define element info
-    pageListItem.classList.add('d-flex', 'flex-column-reverse', 'justify-center');
+    pageListItem.classList.add('d-flex', 'flex-column-reverse', 'justify-center', 'pageListItem');
     itemName.innerText = character.name;
-    itemName.classList.add('btn', 'btn-primary');
+    itemName.classList.add('btn', 'btn-success');
     itemName.setAttribute("type", "button");
     itemName.setAttribute("data-toggle", "modal");
     itemName.setAttribute("data-target", "#characterModal");
