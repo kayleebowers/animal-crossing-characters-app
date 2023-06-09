@@ -17,13 +17,14 @@ let characterRepository = (function () {
   //add characters to webpage
   function addCharacterOnPage (character) {
     let pageList = document.querySelector('.all-characters');
-
+    pageList.classList.add('list-group');
+    
     //create HTML elements
     let pageListItem = document.createElement('div');
     let itemName = document.createElement('button');
 
     //define element info
-    pageListItem.classList.add('character-box');
+    pageListItem.classList.add('list-group-item');
     itemName.innerText = character.name;
     itemName.classList.add('btn');
     itemName.classList.add('btn-primary');
