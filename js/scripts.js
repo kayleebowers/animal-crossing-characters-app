@@ -42,9 +42,6 @@ let characterRepository = (function () {
     pageListItem.appendChild(itemName);
     pageListItem.appendChild(itemImage);
 
-    button.addEventListener("click", function () {
-      showModal(character);
-    });
   }
 
   //declare jQuery variables
@@ -115,9 +112,16 @@ let characterRepository = (function () {
       currentValue = searchInput.value;
       characterList.filter(function (character) {
         if (character.name.toUpperCase() === currentValue.toUpperCase()) {
-          console.log(character.name);
+          $("#characterModal").modal("toggle");
+          showDetails(character);
         }
       })
+    }
+
+    function showDetails(character) {
+      characterRepository.getApiInfo(character).then(function () {
+        showModal(character);
+      });
     }
 
     document.querySelector('.search-bar__button').addEventListener("click", searchForInput);
