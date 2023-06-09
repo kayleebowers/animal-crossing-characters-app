@@ -1,3 +1,24 @@
+body {
+   font-family: 'Quicksand', sans-serif;
+   font-size: 22px;
+}
+
+.navbar-brand {
+    font-size: 26px;
+}
+
+.btn {
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+}
+
+.search-bar__button {
+    font-size: 16px;
+}
+
 .all-characters, h1 {
     margin: 30px;
 }
