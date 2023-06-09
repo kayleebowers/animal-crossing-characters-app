@@ -83,7 +83,7 @@ let characterRepository = (function () {
 
     //create footer element
     let fun = $(
-      '<button>' + 'Catch Phrase: ' + character.catchPhrase + '</button>'
+      '<button>' + 'Catchphrase: ' + character.catchPhrase + '</button>'
     );
     fun.attr('class', 'btn btn-success');
     let close = $('<button>' + 'Close' + '</button>');
