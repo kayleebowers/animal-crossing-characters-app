@@ -86,10 +86,10 @@ let characterRepository = (function () {
     let fun = $(
       '<button>' + 'Catchphrase: ' + character.catchPhrase + '</button>'
     );
-    fun.attr('class', 'btn btn-success');
+    fun.attr('class', 'btn btn-success footer-button');
     let close = $('<button>' + 'Close' + '</button>');
     close.attr('type', 'button');
-    close.attr('class', 'btn btn-secondary');
+    close.attr('class', 'btn btn-secondary footer-button');
     close.attr('data-dismiss', 'modal');
 
     //append to modal
