@@ -35,14 +35,17 @@ let characterRepository = (function () {
     pageList.appendChild(pageListItem);
     pageListItem.appendChild(itemName);
 
+    showModal(character);
   }
-  
+
+  //declare jQuery variables
+  let modalBody = $('.modal-body');
+  let modalTitle = $('.modal-title');
+  let modalHeader = $('.modal-header');
+  let characterModal = $('#characterModal');
+    
   // add showModal function
   function showModal(character) {
-    //declare jQuery variables
-    let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
 
     //clear modals
     modalTitle.empty();
@@ -60,9 +63,7 @@ let characterRepository = (function () {
 
     //append to modal
     modalTitle.append(characterName);
-    modalBody.append(characterImage);
-    modalBody.append(characterSpecies);
-    modalBody.append(characterPersonality);
+    modalBody.append(characterImage) && modalBody.append(characterSpecies) && modalBody.append(characterPersonality);
     modalHeader.append(modalTitle);
   }
 
