@@ -17,24 +17,29 @@ let characterRepository = (function () {
   //add characters to webpage
   function addCharacterOnPage (character) {
     let pageList = document.querySelector('.all-characters');
-    pageList.classList.add('list-group');
-    
+    // pageList.classList.add('list-group');
+    pageList.classList.add('d-flex', 'flex-wrap', 'justify-content-around');
+
     //create HTML elements
     let pageListItem = document.createElement('div');
     let itemName = document.createElement('button');
+    let itemImage = document.createElement('img');
 
     //define element info
-    pageListItem.classList.add('list-group-item');
+    pageListItem.classList.add('d-flex', 'flex-column-reverse', 'justify-center');
     itemName.innerText = character.name;
-    itemName.classList.add('btn');
-    itemName.classList.add('btn-primary');
+    itemName.classList.add('btn', 'btn-primary');
     itemName.setAttribute("type", "button");
     itemName.setAttribute("data-toggle", "modal");
     itemName.setAttribute("data-target", "#characterModal");
+    itemImage.setAttribute("src", character.image);
+    itemImage.setAttribute("alt", "character photo");
+    itemImage.setAttribute("class", "img-fluid");
 
     //append elements
     pageList.appendChild(pageListItem);
     pageListItem.appendChild(itemName);
+    pageListItem.appendChild(itemImage);
 
     showModal(character);
   }
