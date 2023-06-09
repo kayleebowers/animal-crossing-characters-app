@@ -16,6 +16,7 @@ let characterRepository = (function () {
 
   //add characters to webpage
   function addCharacterOnPage (character) {
+
     let pageList = document.querySelector('.all-characters');
     // pageList.classList.add('list-group');
     pageList.classList.add('d-flex', 'flex-wrap', 'justify-content-around');
@@ -41,7 +42,9 @@ let characterRepository = (function () {
     pageListItem.appendChild(itemName);
     pageListItem.appendChild(itemImage);
 
-    showModal(character);
+    button.addEventListener("click", function () {
+      showModal(character);
+    });
   }
 
   //declare jQuery variables
@@ -78,9 +81,9 @@ let characterRepository = (function () {
     return fetch(api).then(function(response) {
       return (response.json());
     }).then(function(object){
-      //loops through nested objects
+
+      //loop through nested objects
       let keysArray = Object.keys(object)
-      console.log(keysArray.length);
     
       for(let i = 0; i < keysArray.length; i++) {
         let character = {
