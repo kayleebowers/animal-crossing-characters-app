@@ -17,11 +17,11 @@ button {
 }
 
 .modal-body {
-    background-color: #c48d3f;
+    background-color: #fffffa;
 }
 
 .modal-header, .modal-footer {
-    background-color: #fffffa;
+    background-color: #fff563;
     padding: 15px;
 }
 
