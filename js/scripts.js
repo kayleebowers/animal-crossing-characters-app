@@ -51,8 +51,9 @@ let characterRepository = (function () {
   let modalBody = $('.modal-body');
   let modalTitle = $('.modal-title');
   let modalHeader = $('.modal-header');
-  let characterModal = $('#characterModal');
-    
+  let modalFooter = $('.modal-footer');
+  let funButton = $('.fun-button');
+
   // add showModal function
   function showModal(character) {
 
@@ -60,6 +61,7 @@ let characterRepository = (function () {
     modalTitle.empty();
     modalBody.empty();
     modalHeader.empty();
+    modalFooter.empty();
 
     //create content elements
     let characterInfo = $("<div></div>")
@@ -72,6 +74,14 @@ let characterRepository = (function () {
     let characterSpecies = $("<p>" + "Species: " + character.species + "</p>");
     let characterPersonality = $("<p>" + "Personality: " + character.personality + "</p>");
     let characterSaying = $("<p>" + "Saying: " + character.saying + "</p>");
+    
+    //create footer element
+    let fun = $("<button>" + "Catch Phrase: " + character.catchPhrase + "</button>");
+    fun.attr("class", "btn btn-success");
+    let close = $("<button>" + "Close" + "</button>");
+    close.attr("type", "button");
+    close.attr("class", "btn btn-secondary");
+    close.attr("data-dismiss", "modal");
 
     //append to modal
     characterInfo.append(characterPersonality);
@@ -82,6 +92,9 @@ let characterRepository = (function () {
     modalBody.append(characterImage);
     modalBody.append(characterInfo);
     modalHeader.append(modalTitle);
+    modalFooter.append(fun);
+    modalFooter.append(close);
+
   }
 
   //get api info
