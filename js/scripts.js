@@ -62,6 +62,8 @@ let characterRepository = (function () {
     modalHeader.empty();
 
     //create content elements
+    let characterInfo = $("<div></div>")
+    characterInfo.attr("class", "character-info");
     let characterName = $("<h1>" + character.name + "</h1>");
     let characterImage = $("<img class='modal-image' width='50%'>");
     characterImage.attr("src", character.image);
@@ -71,8 +73,12 @@ let characterRepository = (function () {
     let characterPersonality = $("<p>" + "Personality: " + character.personality + "</p>");
 
     //append to modal
+    characterInfo.append(characterPersonality);
+    characterInfo.append(characterSpecies);
+
     modalTitle.append(characterName);
-    modalBody.append(characterImage) && modalBody.append(characterSpecies) && modalBody.append(characterPersonality);
+    modalBody.append(characterImage);
+    modalBody.append(characterInfo);
     modalHeader.append(modalTitle);
   }
 
