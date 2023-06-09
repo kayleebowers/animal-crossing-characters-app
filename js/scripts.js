@@ -112,7 +112,7 @@ let characterRepository = (function () {
       currentValue = searchInput.value;
       characterList.filter(function (character) {
         if (character.name.toUpperCase() === currentValue.toUpperCase()) {
-          showModal(character);
+          console.log(character.name);
         }
       })
     }
@@ -124,7 +124,9 @@ let characterRepository = (function () {
     addCharacter,
     addCharacterOnPage,
     getApiInfo, 
-    showModal
+    showModal, 
+    getSearchInput,
+    searchForInput
   };
 })();
 
