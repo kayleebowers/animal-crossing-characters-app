@@ -110,12 +110,14 @@ let characterRepository = (function () {
   
     function searchForInput() {
       currentValue = searchInput.value;
-      pokemonList.filter(function (pokemon) {
-        if (pokemon.name.toUpperCase() === currentValue.toUpperCase()) {
-          showDetails(pokemon);
+      characterList.filter(function (character) {
+        if (character.name.toUpperCase() === currentValue.toUpperCase()) {
+          showModal(character);
         }
       })
     }
+
+    document.querySelector('.search-bar__button').addEventListener("click", searchForInput);
 
   return {
     getAll,
