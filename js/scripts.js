@@ -37,8 +37,34 @@ let characterRepository = (function () {
   }
 
   //add character info to modal
-    
-    // let itemSpecies = document.createElement('p');
+  let modalContainer = document.querySelector('#characterModal');
+
+  // add showModal function
+  function showModal(character) {
+    //declare jQuery variables
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
+
+    //clear modals
+    modalTitle.empty();
+    modalBody.empty();
+
+    //create content elements
+    let characterName = $("<h1>" + character.name + "</h1>");
+    let characterImage = $("<img class='modal-image' width='50%'>");
+    characterImage.attr("src", character.image);
+    characterImage.attr("alt", "character photo");
+    characterImage.attr("class", "img-fluid");
+    let characterSpecies = $("<p>" + "Species: " + character.species + "</p>");
+    let characterPersonality = $("<p>" + "Personality: " + character.personality + "</p>");
+
+    //append to modal
+    modalTitle.append(characterName);
+    modalBody.append(characterImage);
+    modalBody.append(characterSpecies);
+    modalBody.append(characterPersonality);
+  }
     // let itemPersonality = document.createElement('p');
     // itemSpecies.innerText = `Species: ${character.species}`;
     // itemSpecies.classList.add('character-species');
