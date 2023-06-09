@@ -39,6 +39,11 @@ let characterRepository = (function () {
   //add character info to modal
   let modalContainer = document.querySelector('#characterModal');
 
+  //function to call button event listener
+  modalContainer.addEventListener("click", function () {
+    showModal(character);
+  });
+  
   // add showModal function
   function showModal(character) {
     //declare jQuery variables
@@ -65,14 +70,7 @@ let characterRepository = (function () {
     modalBody.append(characterSpecies);
     modalBody.append(characterPersonality);
   }
-    // let itemPersonality = document.createElement('p');
-    // itemSpecies.innerText = `Species: ${character.species}`;
-    // itemSpecies.classList.add('character-species');
-    // itemPersonality.innerText = `Personality: ${character.personality}`;
-    // itemPersonality.classList.add('character-personality');
-    // pageListItem.appendChild(itemSpecies);
-    // pageListItem.appendChild(itemPersonality);
-  
+
   //get api info
   function getApiInfo() {
     return fetch(api).then(function(response) {
@@ -98,18 +96,12 @@ let characterRepository = (function () {
     })
   }
 
-  //display modal function
-  $('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
-
-  //get character info
-
   return {
     getAll,
     addCharacter,
     addCharacterOnPage,
-    getApiInfo
+    getApiInfo, 
+    showModal
   };
 })();
 
