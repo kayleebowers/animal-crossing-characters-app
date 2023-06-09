@@ -34,15 +34,9 @@ let characterRepository = (function () {
     //append elements
     pageList.appendChild(pageListItem);
     pageListItem.appendChild(itemName);
-  }
 
-  //add character info to modal
-  let modalContainer = document.querySelector('#characterModal');
-
-  //function to call button event listener
-  modalContainer.addEventListener("click", function () {
     showModal(character);
-  });
+  }
   
   // add showModal function
   function showModal(character) {
@@ -54,6 +48,7 @@ let characterRepository = (function () {
     //clear modals
     modalTitle.empty();
     modalBody.empty();
+    modalHeader.empty();
 
     //create content elements
     let characterName = $("<h1>" + character.name + "</h1>");
