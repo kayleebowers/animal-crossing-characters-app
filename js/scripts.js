@@ -64,6 +64,11 @@ let characterRepository = (function () {
     })
   }
 
+  //display modal function
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+  
   //get character info
 
   return {
