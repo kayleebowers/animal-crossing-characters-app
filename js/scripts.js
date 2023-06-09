@@ -71,10 +71,12 @@ let characterRepository = (function () {
     characterImage.attr("class", "img-fluid");
     let characterSpecies = $("<p>" + "Species: " + character.species + "</p>");
     let characterPersonality = $("<p>" + "Personality: " + character.personality + "</p>");
+    let characterSaying = $("<p>" + "Saying: " + character.saying + "</p>");
 
     //append to modal
     characterInfo.append(characterPersonality);
     characterInfo.append(characterSpecies);
+    characterInfo.append(characterSaying);
 
     modalTitle.append(characterName);
     modalBody.append(characterImage);
