@@ -98,6 +98,25 @@ let characterRepository = (function () {
     })
   }
 
+    //search for character
+    let searchInput = document.querySelector('.search-bar__input');
+    let currentValue = searchInput.value;
+  
+    function getSearchInput() {
+      currentValue = searchInput.value;
+    }
+  
+    searchInput.addEventListener("input", getSearchInput);
+  
+    function searchForInput() {
+      currentValue = searchInput.value;
+      pokemonList.filter(function (pokemon) {
+        if (pokemon.name.toUpperCase() === currentValue.toUpperCase()) {
+          showDetails(pokemon);
+        }
+      })
+    }
+
   return {
     getAll,
     addCharacter,
