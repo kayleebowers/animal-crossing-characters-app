@@ -4,7 +4,7 @@
 A small web application with HTML, CSS, and JavaScript that loads data from an external Animal Crossing API and enables the viewing of data points in modals. There is also a search bar, which allows users to search by character name. 
 
 ## How to get the project running
-The web application was built using [GitHub Pages](https://kayleebowers.github.io/animal-crossing-characters-app/).  
+The web application was built using [GitHub Pages](https://kayleebowers.github.io/animal-crossing-characters-app/) and can be viewed there.  
 
 ## Project dependencies
 The Animal Crossing Characters App relies on Bootstrap, as well as a fetch polyfill and a promise polyfill. 
