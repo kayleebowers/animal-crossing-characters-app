@@ -42,6 +42,9 @@ let characterRepository = (function () {
     pageListItem.appendChild(itemName);
     pageListItem.appendChild(itemImage);
 
+    itemName.addEventListener("click", function () {
+      showDetails(character);
+    })
   }
 
   //declare jQuery variables
