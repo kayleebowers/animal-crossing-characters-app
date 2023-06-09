@@ -71,6 +71,7 @@ let characterRepository = (function () {
     let characterInfo = $('<div></div>');
     characterInfo.attr('class', 'character-info');
     let characterName = $('<h1>' + character.name + '</h1>');
+    characterName.attr('class', 'character-name');
     let characterImage = $("<img class='modal-image' width='50%'>");
     characterImage.attr('src', character.image);
     characterImage.attr('alt', 'character photo');

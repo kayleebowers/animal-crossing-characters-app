@@ -13,4 +13,14 @@ button {
 
 .character-info {
     padding: 20px;
+    font-size: 20px;
+}
+
+.modal-body {
+    background-color: #c48d3f;
+}
+
+.modal-header, .modal-footer {
+    background-color: #fffffa;
+    padding: 15px;
 }
